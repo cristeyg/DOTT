@@ -1,7 +1,7 @@
 node {
     stage('Build') {
         sh 'echo "Step One build something else" '
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: https://github.com/cristeyg/DOTT.git]]])
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/cristeyg/DOTT.git']]])
     }
     stage('SonarQube') {
         sh 'echo "Step Two Sonarqube x" '
