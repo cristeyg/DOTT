@@ -1,12 +1,12 @@
-FROM ruby:2-alpine
+FROM ruby:3.0.2
 
 WORKDIR /app
 
-COPY Gemfile .
+COPY ./cidr_convert_api/Gemfile .
 RUN gem install bundler \
     && bundle install
 
-COPY . .
+COPY ./cidr_convert_api .
 CMD ["ash", "-c", "ruby api.rb"]
 # docker build -t rbm .
 # docker run -ti -p 8000:8000 rbm
