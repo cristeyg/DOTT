@@ -5,7 +5,6 @@ node {
     }
     stage('SonarQube') {
         sh 'echo "Step Two Sonarqube x" '
-        sh "ls -a"
         def scannerhome =tool 'sonar';
         withSonarQubeEnv ('sonar'){
             sh """${scannerhome}/bin/sonar-scanner \
