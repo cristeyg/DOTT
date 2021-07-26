@@ -21,6 +21,6 @@ node {
         sh 'echo "Step Three ddd" '
     }
     stage('Deploy') {
-        sh 'docker run -d --name ruby -p 8080:8081 '
+        sh 'docker run -d --name ruby -p 80:8081 '
     }
 }
