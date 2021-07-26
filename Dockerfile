@@ -2,7 +2,7 @@ FROM ruby:3.0.2
 
 WORKDIR /app
 
-COPY ./cidr_convert_api/Gemfile .
+COPY ./cidr_convert_api/ruby/Gemfile .
 RUN gem install bundler \
     && bundle install
 
