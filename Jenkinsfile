@@ -1,5 +1,5 @@
 node {
-    stage('Build') {
+    stage('Check SCM') {
         sh 'echo "Step One build something else" '
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/cristeyg/DOTT.git']]])
     }
@@ -14,13 +14,13 @@ node {
             -Dsonar.host.url=http://ec2-3-137-171-147.us-east-2.compute.amazonaws.com:9000 """
         }
     }
-    stage('Quality Gate') {
-        sh 'echo "Step Three ddd" '
+    stage('Build') {
+        sh 'docker image build . -t RubyImage'
     }
     stage('Testing') {
         sh 'echo "Step Three ddd" '
     }
     stage('Deploy') {
-        sh 'echo "Step Three" '
+        sh 'docker run -d --name ruby -p 8080:8081 '
     }
 }
