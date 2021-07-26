@@ -11,8 +11,8 @@ node {
             sh """${scannerhome}/bin/sonar-scanner \
             -Dsonar.projectKey=Prueba \
             -Dsonar.sources=./cidr_convert_api \
-            -Dsonar.host.url=http://ec2-18-188-51-220.us-east-2.compute.amazonaws.com:9000 \
-            -Dsonar.login=025ecbc8c6310700d3880f77779118424b8c3dcd """
+            -Dsonar.host.url=http://ec2-3-137-171-147.us-east-2.compute.amazonaws.com:9000 \
+            -Dsonar.login=9b67f066ded15bd538805b4b1b224fdae0beb0cf """
         }
     }
     stage('Quality Gate') {
