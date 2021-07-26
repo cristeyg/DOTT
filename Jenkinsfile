@@ -14,12 +14,12 @@ node {
         }
     }
     stage('Build') {
-        sh 'docker build -t rubyimage .'
+        sh 'sudo docker build -t rubyimage .'
     }
     stage('Testing') {
         sh 'echo "Step Three ddd" '
     }
     stage('Deploy') {
-        sh 'docker run -d --name ruby -p 80:8081 rubyimage '
+        sh 'sudo docker run -d --name ruby -p 80:8081 rubyimage '
     }
 }
