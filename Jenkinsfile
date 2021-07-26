@@ -14,12 +14,12 @@ node {
         }
     }
     stage('Build') {
-        sh 'docker image build . -t rubyimage'
+        sh 'docker image build . -t DOTT/cidr_convert_api/ruby'
     }
     stage('Testing') {
         sh 'echo "Step Three ddd" '
     }
     stage('Deploy') {
-        sh 'docker run -d --name ruby -p 80:8081 rubyimage '
+        sh 'docker run -d --name ruby -p 80:8081 DOTT/cidr_convert_api/ruby '
     }
 }
