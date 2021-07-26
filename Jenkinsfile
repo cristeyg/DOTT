@@ -15,7 +15,7 @@ node {
         }
     }
     stage('Build') {
-        sh 'docker image build . -t RubyImage'
+        sh 'docker image build . -t rubyimage'
     }
     stage('Testing') {
         sh 'echo "Step Three ddd" '
