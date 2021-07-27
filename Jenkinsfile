@@ -16,6 +16,7 @@ node {
         sh 'docker build -t cristeyg/app .'
     }
     stage('Testing') {
+        sh 'export PATH="/var/lib/jenkins/.rbenv/bin:$PATH" eval "$(rbenv init -)" '
         sh 'ruby tests.rb'
     }
     stage('Deploy') {
