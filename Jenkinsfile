@@ -17,7 +17,7 @@ node {
         sh 'docker build -t cristeyg/app .'
     }
     stage('Testing') {
-        sh 'echo "Step Three ddd" '
+        sh 'ruby DOTT/cidr_convert_api/ruby/tests.rb'
     }
     stage('Deploy') {
         sh 'docker run -d --name ruby -p 80:8081 cristeyg/app '
