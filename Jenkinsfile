@@ -16,7 +16,7 @@ node {
         sh 'docker build -t cristeyg/app .'
     }
     stage('Testing') {
-        sh 'bin/rake tests.rb'
+        sh 'rake tests.rb'
     }
     stage('Deploy') {
         sh 'docker run -d --name ruby -p 80:8081 cristeyg/app '
