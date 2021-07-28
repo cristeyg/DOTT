@@ -16,7 +16,7 @@ node {
         sh 'docker build -t cristeyg/app .'
     }
     stage('Testing') {
-        sh 'echo "Testing ... "'
+        sh 'echo "hope it works ... "'
     }
     stage('Deploy') {
         sh 'docker run -d --name ruby -p 80:8081 cristeyg/app '
